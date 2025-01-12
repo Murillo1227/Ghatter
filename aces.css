@@ -1,0 +1,130 @@
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #1c0b2b; /* Fondo morado oscuro */
+  color: #e3d5ee; /* Texto en morado clarito */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+#auth-container {
+  background: linear-gradient(145deg, #1e0c34, #24103a); /* Fondo degradado */
+  border-radius: 15px;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+  padding: 20px 30px;
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+  display: none; /* Se mostrará dependiendo del estado de autenticación */
+}
+
+h1 {
+  color: #f48fb1; /* Rosado */
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  margin: 10px 0 5px;
+  color: #bfb3c7;
+  text-align: left;
+}
+
+input[type="email"],
+input[type="password"] {
+  width: 100%;
+  padding: 10px;
+  border-radius: 8px;
+  border: none;
+  margin-bottom: 15px;
+  font-size: 16px;
+  background-color: #2d1845; /* Morado oscuro */
+  color: #d1c4e9;
+  box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.3), inset -2px -2px 5px rgba(255, 255, 255, 0.1);
+}
+
+input[type="email"]:focus,
+input[type="password"]:focus {
+  outline: none;
+  border: 1px solid #80deea; /* Verde azulito */
+  box-shadow: 0 0 8px #80deea;
+}
+
+button {
+  width: 100%;
+  padding: 10px;
+  border-radius: 8px;
+  border: none;
+  background-color: #80deea; /* Verde azulito */
+  color: #1c0b2b;
+  font-weight: bold;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+  margin-bottom: 10px;
+}
+
+button:hover {
+  background-color: #4dd0e1; /* Verde azulito más claro */
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+}
+
+#error-message {
+  color: #f48fb1; /* Rosado */
+  font-size: 14px;
+  margin-top: 10px;
+  display: none; /* Se mostrará solo en caso de error */
+}
+
+#user-info {
+  display: none;
+  background: linear-gradient(145deg, #1e0c34, #24103a); /* Fondo degradado */
+  border-radius: 15px;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+  padding: 20px 30px;
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+}
+
+#user-name {
+  color: #e3d5ee; /* Morado clarito */
+  font-size: 18px;
+  margin-bottom: 15px;
+}
+
+#logout {
+  background-color: #f48fb1; /* Rosado */
+  color: #1c0b2b;
+}
+
+/* Barra de carga */
+#loading-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 5px;
+  background-color: #f3f3f3;
+}
+
+#progress {
+  height: 100%;
+  width: 0;
+  background-color: #4caf50;
+}
+
+/* Estilos para el formulario */
+form {
+  margin-top: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+input, button {
+  margin: 10px;
+  padding: 10px;
+}

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reproductor de Música</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="/20250110_152741-removebg-preview.png">
+</head>
+<body>
+  <div class="player">
+    <h1>🎵 GHATTER MUSIC 🎵</h1>
+    <audio id="audio" src=""></audio>
+
+    <!-- Barra de búsqueda -->
+    <div class="search-bar">
+      <input type="text" id="search" placeholder="Buscar canciones o artistas...">
+    </div>
+
+    <div class="playlist">
+      <h2>Lista de Reproducción</h2>
+      <ul id="song-list">
+        <!-- Las canciones se generarán aquí dinámicamente -->
+      </ul>
+    </div>
+
+    <!-- Barra de controles en la parte inferior -->
+    <div class="controls-bar">
+      <button id="prev">⏮️ Anterior</button>
+      <button id="play">▶️ Reproducir</button>
+      <button id="pause">⏸️ Pausar</button>
+      <button id="next">⏭️ Siguiente</button>
+    </div>
+
+  <script src="script.js"></script>
+  
+  <link rel="icon" href="/20250110_152741-removebg-preview.png">
+  <style>
+    /* Estilos para la imagen y la posición */
+    #foto-aleatoria {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      margin-right: 10px;
+    }
+    #usuario-info {
+      display: flex;
+      align-items: center;
+    }
+    #login-btn {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+    }
+  </style>
+
+  <!-- Botón de inicio de sesión -->
+  <button id="login-btn"><a href="acceso.html">Iniciar Sesión</a></button>
+
+  <!-- Contenedor de información del usuario -->
+  <div id="usuario-info" style="display:none;">
+    <img id="foto-aleatoria" src="" alt="Foto aleatoria">
+    <span id="email-usuario"></span>
+  </div>
+
+   <script>
+    // Array con enlaces de fotos aleatorias
+    const fotos = [
+      "/imágenes/images (1).png",
+      "/imágenes/images (2).png",
+      "/imágenes/images (3).png",
+      "",
+      ""
+    ];
+
+    // Función para escoger una foto aleatoria
+    function escogerFotoAleatoria() {
+      const indiceAleatorio = Math.floor(Math.random() * fotos.length);
+      return fotos[indiceAleatorio];
+    }
+
+        // Seleccionar foto aleatoria
+        const fotoAleatoria = escogerFotoAleatoria();
+
+        // Mostrar la foto y el correo del usuario
+        document.getElementById("foto-aleatoria").src = fotoAleatoria;
+        document.getElementById("email-usuario").textContent = `Bienvenido, ${user.email}`;
+        document.getElementById("usuario-info").style.display = "flex"; // Mostrar la información
+        document.getElementById("login-btn").style.display = "none"; // Ocultar el botón de inicio de sesión
+      }).catch((error) => {
+        console.log(error.message);
+      });
+    }
+
+    // Evento de inicio de sesión
+    document.getElementById("login-btn").addEventListener("click", iniciarSesion);
+  </script>
+  <!-- Contenedor de mensaje personalizado -->
+<div id="custom-message" class="custom-message">
+  <span id="message-text">Este es un mensaje personalizado</span>
+  <button id="close-message" class="close-message">X</button>
+</div>
+  
+</body>
+</html>

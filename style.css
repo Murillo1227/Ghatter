@@ -1,0 +1,382 @@
+/* Estilo general */
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #B790FF; /* Fondo negro */
+  color: #0AFFD1; /* Texto dorado */
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  overflow-x: hidden;
+}
+
+.player {
+  margin: 20px;
+  padding: 20px;
+  width: 90vw;
+  max-width: 600px;
+  height: 80%;
+  border-radius: 10px;
+  background: linear-gradient(345deg, #4B04FF, #D773FF);
+  box-shadow: 0px 10px 15px rgba(0, 0, 0, 1), inset 0px -5px 10px rgba(0, 0, 0, 0.96);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+h1, h2 {
+  margin-bottom: 5px;
+  color: #0AFFD1;
+  text-align: center;
+}
+
+.playlist {
+  margin-bottom: 5px;
+  max-height: 400px; /* Limita el tamaño de la lista */
+  overflow-y: auto; /* Habilita el scroll si es necesario */
+  animation: fadeIn 1s ease-out;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+li {
+  padding: 10px;
+  border: 1px solid #0969FF;
+  border-radius: 5px;
+  margin: 5px 0;
+  cursor: pointer;
+  background: #7E42CC;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+li:hover {
+  background: #6646B8;
+  transform: scale(1.05);
+}
+
+li.playing {
+  background-color: #0057FF;
+  color: #83ADFF;
+  transform: scale(1.1);
+}
+
+/* Barra de controles */
+.controls-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 10px 0;
+  background-color: #6A99FFBF; /* Fondo oscuro */
+  border-top: 2px solid #00FFBC;
+  box-shadow: 0px -2px 10px rgba(0, 0, 0, 0.91);
+}
+
+button {
+  padding: 10px 15px;
+  font-size: 16px;
+  border: 1px solid #007DFF;
+  border-radius: 5px;
+  background-color: #7A37FF;
+  color: #00FFE2;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+button:hover {
+  background-color: #993BCE;
+}
+
+/* Animaciones */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Barra de búsqueda */
+.search-bar input {
+  padding: 12px;
+  margin: 5px 0;
+  width: 100%;
+  max-width: 350px;
+  border-radius: 5px;
+  border: 1px solid #0076FF;
+  background-color: #8900FFE3;
+  color: #00FFC8;
+  font-size: 18px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Animación palpitante con opacidad para el icono */
+.top-badge {
+  color: #FF4500; 
+  font-weight: bold;
+  display: inline-flex;
+  align-items: center;
+  font-size: 1.5em;
+  animation: pulseOpacity 1.5s infinite alternate;
+}
+
+/* Efecto de palpitación suave con opacidad */
+@keyframes pulseOpacity {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* Fuego animado para el Top 1 */
+.top-badge {
+  animation: fireEffect 1.5s infinite alternate;
+}
+
+/* Efecto de fuego para el texto Top 1 */
+@keyframes fireEffect {
+  0% {
+    text-shadow: 0 0 15px #ff4500, 0 0 30px #ff4500, 0 0 50px #FF0000, 0 0 100px #ff6347;
+  }
+  50% {
+    text-shadow: 0 0 30px #ff6347, 0 0 60px #ff4500, 0 0 90px #FF1818, 0 0 90px #ff4500;
+  }
+  100% {
+    text-shadow: 0 0 15px #FF4500, 0 0 30px #ff4500, 0 0 50px #FF0000, 0 0 80px #ff6347;
+  }
+}
+
+/* Icono palpitante */
+.top-badge .icon {
+  margin-right: 8px;
+  font-size: 1.6em;
+  animation: pulseIcon 1.5s infinite ease-in-out;
+}
+
+/* Animación del icono palpitante */
+@keyframes pulseIcon {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.2); }
+  100% { transform: scale(1); }
+}
+
+/* Animación palpitante con opacidad para el icono */
+.top-badge {
+  font-weight: bold;
+  display: inline-flex;
+  align-items: center;
+  font-size: 1.5em;
+  animation: pulseOpacity 1.5s infinite alternate;
+}
+
+/* Efecto de palpitación suave con opacidad */
+@keyframes pulseOpacity {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* Fuego animado para el Top 1 */
+.top-badge.fire {
+  animation: fireEffect 1s infinite alternate;
+}
+
+/* Efecto de fuego para el texto Top 1 */
+@keyframes fireEffect {
+  0% {
+    text-shadow: 0 0 15px #ff4500, 0 0 30px #ff4500, 0 0 50px #ff6347, 0 0 100px #ff6347;
+  }
+  50% {
+    text-shadow: 0 0 30px #ff6347, 0 0 60px #ff4500, 0 0 90px #ff6347, 0 0 120px #ff4500;
+  }
+  100% {
+    text-shadow: 0 0 15px #ff4500, 0 0 30px #ff4500, 0 0 50px #ff6347, 0 0 100px #ff6347;
+  }
+}
+
+/* Brillo suave para Top 2 */
+.top-badge.top2 {
+  color: #FFD700;
+  animation: glowEffect 1.5s infinite alternate;
+  margin: 2px;
+}
+
+/* Efecto de resplandor suave para el Top 2 */
+@keyframes glowEffect {
+  0% {
+    text-shadow: 0 0 5px #FFD700, 0 0 10px #ffd700;
+  }
+  50% {
+    text-shadow: 0 0 20px #FFD700, 0 0 40px #ffd700;
+  }
+  100% {
+    text-shadow: 0 0 5px #FFD700, 0 0 10px #ffd700;
+  }
+}
+
+/* Animación de cambio de color para Top 3 */
+.top-badge.top3 {
+  color: #00ff00;
+  animation: colorShift 2s infinite alternate;
+}
+
+/* Efecto de cambio de color para el Top 3 */
+@keyframes colorShift {
+  0% {
+    color: #00F6FF;
+  }
+  50% {
+    color: #0DA0E2;
+  }
+  100% {
+    color: #00FFE8;
+  }
+}
+
+/* Icono palpitante para el Top 1 */
+.top-badge .icon {
+  margin-right: 8px;
+  font-size: 1.6em;
+  animation: pulseIcon 1.5s infinite ease-in-out;
+}
+
+/* Animación del icono palpitante */
+@keyframes pulseIcon {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.2); }
+  100% { transform: scale(1); }
+}
+
+::placeholder{
+  color: #00FFDB;
+}
+
+/* Botón de Iniciar Sesión */
+#login-btn {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  background-color: #AC5EFF;
+  color: #11FFBA;
+  border: none;
+  padding: 10px 20px;
+  font-size: 14px;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+/* Hover y efecto de interacción */
+#login-btn:hover {
+  background-color: #5700FF;
+}
+
+#login-btn:active {
+  transform: scale(0.95);
+}
+
+.foto-usuario {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.cuenta {
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+#user-info {
+  margin: 20px;
+}
+
+/* Estilo normal para el enlace */
+a {
+  text-decoration: none; /* Quita la línea debajo del enlace */
+  color: inherit; /* Hereda el color del texto para que no tenga color diferente */
+}
+
+/* Estilo cuando el enlace ha sido visitado */
+a:visited {
+  text-decoration: none; /* Quita la línea debajo del enlace */
+  color: inherit; /* Mantiene el color original después de ser visitado */
+}
+
+/* Estilo cuando el enlace está siendo presionado */
+a:active {
+  text-decoration: none; /* Quita la línea de subrayado cuando se hace clic */
+  color: inherit; /* Mantiene el color original mientras se presiona */
+}
+
+#login-btn{
+  box-shadow: 2px 2px 4px #000000;
+  margin-right: 12px;
+}
+
+/* Estilo para el contenedor del mensaje */
+.custom-message {
+  display: none; /* Inicialmente oculto */
+  position: fixed;
+  top: 9px;
+  left: 30%;
+  transform: translateX(-50%);
+  background-color: #B06CFF; /* Color verde para el éxito */
+  color: #6CFFD4;
+  padding: 10px 20px;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.8);
+  font-size: 16px;
+  z-index: 1000;
+  max-width: 80%;
+  text-align: center;
+}
+
+/* Estilo para el botón de cierre */
+.close-message {
+  background: none;
+  border: none;
+  color: #05FFC9;
+  font-size: 18px;
+  font-weight: bold;
+  position: absolute;
+  top: -1px;
+  right: -10px;
+  cursor: pointer;
+  margin-left: 2px;
+}
+
+.close-message:hover {
+  color: #05FFEF;
+}
