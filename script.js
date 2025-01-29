@@ -1,6 +1,6 @@
 // Lista de canciones
 const canciones = [
-  { nombre: "SPORT", artista: "myketowers", src: "/música/_ClarentKP - SPORT(M4A_128K).m4a", likes: 0 },
+  { nombre: "SPORT", artista: "myketowers", src: "https://drive.google.com/file/d/16jff8BAA83UPvuo4NAlG5eAHazaUffwe/view?usp=drive_link", likes: 0 },
   { nombre: "La Última Vez", artista: "Anuel AA x Bad Bunny", src: "/música/Anuel AA_ Bad Bunny - La Última Vez(M4A_128K).m4a", likes: 0 },
   { nombre: "Eminem _Without-Me _slowed and Reverb", artista: "Eminem", src: "/música/_Eminem _Without-Me _slowed and Reverb(M4A_128K).mp3", likes: 0 },
   { nombre: "lovely", artista: "Billie Eilish", src: "/música/Billie Eilish - lovely (Lyrics) ft. Khalid(MP3_160K).mp3", likes: 0 },
